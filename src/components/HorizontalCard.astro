@@ -1,0 +1,67 @@
+---
+const { title, img, desc, url, badge, tags, target = "_blank", articleUrl, videoDemo, visualization, githubUrl} = Astro.props;
+import { Image } from "astro:assets";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+---
+
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
+  <a href={url} target={target}>
+    <div class="hero-content flex-col md:flex-row">
+      {
+        img && (
+          <Image
+            src={img}
+            width={750}
+            height={422}
+            format="webp"
+            alt={title}
+            class="max-w-full md:max-w-[13rem] rounded-lg"
+          />
+        )
+      }
+      <div class="grow w-full">
+        <h1 class="text-xl font-bold">
+          {title}
+          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+        </h1>
+        <p class="py-1 text-1xl">{desc}</p>
+        <div class="card-actions justify-end">
+          {
+            tags &&
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
+          }
+        </div>
+        <div class="button-group mt-4">
+          {articleUrl && (
+            <a href={articleUrl} target={target} class="btn btn-primary mr-2">
+              Article
+            </a>
+          )}
+          {videoDemo && (
+            <a href={videoDemo} target={target} class="btn btn-secondary">
+              Youtube Demo
+            </a>
+          )}
+          {visualization && (
+            <a href={visualization} target={target} class="btn btn-secondary">
+              Visualization
+            </a>
+          )}
+          
+          {githubUrl && (
+            <a href={githubUrl} target={target} class="btn btn-secondary">
+              GitHub
+            </a>
+          )}
+          
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

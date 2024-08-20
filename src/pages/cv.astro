@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+      I am a 3rd year Data Science major at the University of California, San Diego, with a minor in Mathematics, I have experience in developing data-driven solutions during industry experiences at Deloitte Consulting, Simpl Healthcare, Meliolabs, and UCSD where I have demonstrated expertise in Python, JavaScript, and data analysis tools like Pandas and OpenCV, contributing to significant cost reductions and enhanced operational efficiencies.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="B.S. Data Science "
+      subtitle="2022 to 2026 at UC San Diego"
+    />
+
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Data Science Program"
+      subtitle="Deloitte Consulting, La Jolla, CA (May 2024 - June 2024)"
+    >
+      Participated in a comprehensive mentorship program enhancing skills in data storytelling, analysis, and modeling, complemented by weekly insights from experienced mentors leading to a culminating group project presentation. Implemented a supplier optimization model in Python to strategically reduce costs, leveraging PuLP for significant financial savings through data-driven supplier selection.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Data Science/SWE Intern"
+      subtitle="April 2024 to August 2024 at Simpl Healthcare"
+    >
+      Reduced operational costs by developing an in-house smartphone camera photoplethysmography (cPPG) system, eliminating the need for outsourced technology. Implemented a novel calibration method from research to enhance the accuracy of cPPG measurements, achieving a 74% theoretical accuracy increase. Developed and integrated custom software for cPPG data analysis, supporting consistent and transferable health monitoring through video.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Data Analyst/SWE Intern"
+      subtitle="June 2023 to September 2023 at Meliolabs, Santa Clara, CA"
+    >
+      Increased processing speed for high-resolution biological images by developing image processing algorithms with OpenCV and SciPy. Enhanced data representation and analysis capabilities by creating workflows with Pandas, Plotly, and Skimage. Streamlined nightly data transfers by designing a Python-based file management system, ensuring timely data synchronization with system notifications via email.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="AWS Certified Cloud Practitioner"
+      subtitle="Amazon EC2, Amazon S3, Lambda, Aurora, EBS, Snowflake, VPC, IAM, RDS, CloudFront, Route 53"
+    />
+  
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Projects</div>
+  </div>
+
+  <div class="time-line-container mb-10"></div>
+    <TimeLineElement
+      title="ML Predictive Analysis of Power Outage Trends and Climate Implications"
+      subtitle="Random Forest Regression, k-nearest neighbors, Data Preprocessing"
+    >
+      Utilized Random Forest Regression for predictive analysis of power outage trends and climate impact. Performed data preprocessing and EDA, improving model accuracy and robustness. Analyzed temporal data to estimate outage durations and assess impact.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Corporate Compensation Insight"
+      subtitle="Svelte, JavaScript, JSON dataset"
+    >
+      Utilized Svelte and JavaScript to create interactive web visualizations, highlighting pay disparities in a dynamic, user-engaging format. Analyzed executive compensation across industries using a JSON dataset, enabling interactive exploration of CEO vs. worker pay ratios.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Digital Image Classification and Image Processing Service: MNIST KNN Classifier"
+      subtitle="KNN classifier, MNIST dataset, Image Renderer"
+    >
+      Developed a KNN classifier for digit recognition using the MNIST dataset. Created an interactive image renderer for MNIST, enabling user interaction with digit images through drawing and modification features. Implemented photo editing software with features like chroma key, grayscale, and rotation.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Real Estate REST API Using Django REST Framework"
+      subtitle="Django, MySQL, HTML"
+    >
+      Developed a REST API for real estate property listings using Django Framework and MySQL database. Implemented an HTML app for the API.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+  </ul>
+</BaseLayout>

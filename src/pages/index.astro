@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+import powerOutage from "/public/power-outage.png"
+import ceo from "/public/ceo-thumbnail.png"
+import youtube from "public/youtube-thumbnail.webp"
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Krish Prasad</div>
+    <div class="text-3xl py-3 font-bold">Software Engineering and Data Science Student</div>
+    <div class="py-2">
+      <text class="text-lg">
+        I am a 3rd year Data Science major at the University of California, San Diego, with a minor in Mathematics, 
+        I have  experience in developing data-driven solutions during industry experiences at Deloitte Consulting, 
+        Simpl Healthcare, Meliolabs, and UCSD where I have demonstrated expertise in Python, JavaScript, and data analysis
+        tools like Pandas and OpenCV, contributing to significant cost reductions and enhanced operational efficiencies.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://www.linkedin.com/in/krish-prasad/" target="_blank"> Let's connect!</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+  </div>
+
+  <HorizontalCard
+    title="Youtube Copilot: AI-Powered YouTube Companion "
+    img={youtube}
+    url="https://github.com/kpkrishprasad/Youtube-Copilot"
+    desc={
+        "Youtube Copilot is a web application that provides YouTube video summaries, generates timestamps, and includes an interactive chatbot for querying video content. Built with Django as the backend framework, it uses the YouTube Data API to extract video captions, which are processed with advanced Natural Language Processing (NLP) techniques such as text summarization and keyword extraction. The Django backend orchestrates the data flow and serves the processed content, while the front-end, powered by JavaScript, handles dynamic content updates and user interactions. The application’s interface is styled with responsive CSS, ensuring a smooth and intuitive user experience, making it easier to explore and understand video content."
+    }
+
+    badge="NEW"
+    githubUrl= "https://github.com/kpkrishprasad/Youtube-Copilot"
+  />
+
+  <div class="divider my-0"></div>
+
+  <HorizontalCard
+    title="Power Outage Prediction with Random Forest"
+    img={powerOutage}
+    url="https://kpkrishprasad.github.io/Power-Outage-Random-Forest-Regressor/"
+    desc={
+        "This project focuses on predicting the duration of major U.S. power outages from 2000 to 2016, " +
+        "using a Random Forest Regressor implemented in Python. Leveraging scikit-learn for machine learning and pandas " +
+        "for data manipulation, the project addresses complex challenges in the energy domain, such as the impact of " +
+        "climate anomalies, urbanization, and economic factors on power grid resilience. Advanced data preprocessing, " +
+        "including imputation via K-Nearest Neighbors and feature transformations like quantile normalization, were " +
+        "employed to enhance the model's accuracy. The model, fine-tuned through grid search, achieved a notable " +
+        "improvement in R-squared, indicating its efficacy in capturing the multifaceted interactions affecting outage " +
+        "durations. A fairness analysis ensured that predictions remain unbiased across different population groups, " +
+        "reinforcing the model's reliability in this critical infrastructure domain."
+    }
+
+    badge="NEW"
+    articleUrl= "https://kpkrishprasad.github.io/Power-Outage-Random-Forest-Regressor/"
+    githubUrl= "https://github.com/kpkrishprasad/Power-Outage-Random-Forest-Regressor"
+  />
+
+  <div class="divider my-0"></div>
+
+   <HorizontalCard
+    title="CEOs Hate This Simple Trick"
+    img={ceo}
+    url="https://github.com/kpkrishprasad/CEO-visualization"
+    desc = {
+      "This project combines modern web development with data analysis, using JavaScript to create interactive visualizations of CEO compensation. " +
+      "I utilized Svelte to build a responsive and efficient user interface, while Vite was employed for rapid development and optimized performance. " +
+      "The project involved sourcing and processing a detailed dataset from Kaggle, which was then transformed into dynamic visualizations, such as scatter plots and bar charts, using JavaScript. " +
+      "These visualizations enable users to explore and understand the disparities in pay between CEOs and workers across different industries, " +
+      "showcasing my ability to blend development skills with data insights to create impactful, data-driven applications."
+  }
+  
+    badge="NEW"
+    videoDemo= "https://www.youtube.com/watch?v=YoSVfheAnN8"
+    visualization = "https://kpkrishprasad.github.io/CEO-visualization/"
+    githubUrl= "https://github.com/kpkrishprasad/CEO-visualization"
+  />
+
+
+
+  <!-- <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          target="_self"
+          badge={post.data.badge}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  } -->
+</BaseLayout>
