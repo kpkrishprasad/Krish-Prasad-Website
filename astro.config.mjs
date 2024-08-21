@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kpkrishprasad.github.io',
-  base: '/Krish-Prasad-Portfolio',
+  base: '/Krish-Prasad-Website',
   integrations: [mdx(), sitemap(), tailwind()]
 });
